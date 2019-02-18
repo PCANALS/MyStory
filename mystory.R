@@ -2,19 +2,15 @@ rm(list = ls())
 
 pacman::p_load(magick, networkD3)
 
-# Do you
-
-
-
 
 #Live
 
-bcn <- image_read("https://pcanals.github.io/pics/barcelona.jpg" )%>%image_scale("x300")
-trip<-image_read("https://pcanals.github.io/pics/travel01.jpg" )%>%image_scale("x300")
-nieve <- image_read("https://pcanals.github.io/pics/alpes.jpg" )%>%image_scale("x300") 
-snow <- image_read("https://pcanals.github.io/pics/snow.jpg" )%>%image_scale("x300") 
-lea <- image_read("https://pcanals.github.io/pics/lea.jpg" )%>%image_scale("x300") 
-playa <- image_read("https://pcanals.github.io/pics/playa.jpg" )%>%image_scale("x300")
+bcn <- image_read("https://pcanals.github.io/pics/barcelona.jpg" )%>%image_scale("x200")
+trip<-image_read("https://pcanals.github.io/pics/travel01.jpg" )%>%image_scale("x200")
+nieve <- image_read("https://pcanals.github.io/pics/alpes.jpg" )%>%image_scale("x200") 
+snow <- image_read("https://pcanals.github.io/pics/snow.jpg" )%>%image_scale("x200") 
+lea <- image_read("https://pcanals.github.io/pics/lea.jpg" )%>%image_scale("x200") 
+playa <- image_read("https://pcanals.github.io/pics/playa.jpg" )%>%image_scale("x200")
 
 life<-image_animate(c(bcn, trip, snow, playa, nieve, lea), 
                     fps = 1, dispose = "previous")
@@ -32,32 +28,80 @@ git<-image_annotate(image_read("https://pcanals.github.io/pics/GIT.png" )%>%imag
 ##Decisions
 
 ## Are u sure
-really<-image_read("https://pcanals.github.io/pics/really.gif")
 what<-image_read("https://pcanals.github.io/pics/what.gif")
 yeah<-image_read("https://pcanals.github.io/pics/yeah.gif")
+sad<-image_read("https://pcanals.github.io/pics/sad.gif")
 
 #first questions
 
-a<-menu(c("Yes", "No", "Maybe"), title="Do u wanna know my story?", graphics = TRUE)
+a<-as.numeric(menu(c("Yes", "No", "Maybe"), title="Do u wanna know my story?", graphics = TRUE))
 
-if (a == 1){
-  b<-menu(c("Life", "Work", "Projects"), title="What do u want know?", graphics = TRUE)
-  if (b==1){ print(life);print("Hi, I'm Pilar and I live in Barcelona, I love travelling, the snow and Lea, my puppy")}
-      else if (b==2) {print(cv2); "Check my cv on  www.linkedin.com/in/pilarcanals"}
-      else if (b==3) {print(git); "See my projects on Github https://github.com/PCANALS"}
+
+while((a == 1|c==1){
+    b<-as.numeric(menu(c("Life", "Work", "Projects"), title="What do u want know?", graphics = TRUE))
+      if (b==1){ print(life); print("Hi, I'm Pilar and I live in Barcelona, I love travelling,the snow and Lea, my puppy")}
+        else if (b==2) {print(cv2); print("Check my cv on  www.linkedin.com/in/pilarcanals")}
+        else if (b==3) {print(git); print("See my projects on Github https://github.com/PCANALS")}
 } else {
-  print (what);
-   c<-menu(c("no", "yes"), title="Are u sure?", graphics = TRUE )
-      if (c==1) {print("Yeii!, then let's back to the beginning")}
-  }
+    print (what);
+    c<-as.numeric(menu(c("no", "yes"), title="Are u sure?", graphics = TRUE ))
+      if (c==1) {print(yeah); print("Yeii!, then let's back to the beginning")
+        }
+      else if (c==2) {break}
+        }
+)
 
 
-#Projects
+
+
+print(sad); print("OK,  see you soon then.")
+
+# if (a == 1){
+#   b<-as.numeric(menu(c("Life", "Work", "Projects"), title="What do u want know?", graphics = TRUE))
+#   if (b==1){ print(life); 
+#     print("Hi, I'm Pilar and I live in Barcelona, I love travelling,the snow and Lea, my puppy")}
+#   else if (b==2) {print(cv2);  
+#     print("Check my cv on  www.linkedin.com/in/pilarcanals")}
+#   else if (b==3) {print(git);  
+#     print("See my projects on Github https://github.com/PCANALS")}
+# } else {
+#   print (what);
+#   c<-as.numeric(menu(c("no", "yes"), title="Are u sure?", graphics = TRUE ))
+#   if (c==1) {print(yeah); 
+#     print("Yeii!, then let's back to the beginning")
+#   }
+#   else if (c==2) {print(sad); 
+#     print("OK,  see you soon then.")
+#   }
+# }
+
+
+
+
+
+
+
+
+
+x <- 5
+if (x < 0) {
+  print("Negative number")
+} else if (x > 0) {
+  print("Positive number")
+} else
+  print("Zero")
+
+
+
+
+
+
+
 
 
 
 # print(really)
-image_browse(what)
+#image_browse(what)
 # 
 # 
 # 
