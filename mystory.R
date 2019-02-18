@@ -25,7 +25,8 @@ cv2 <- image_read_pdf("PilarCanals.pdf")%>%image_scale("x1000")
 
 #projects
 
-git<-image_annotate(image_read("https://pcanals.github.io/pics/GIT.png" )%>%image_scale("x400"), "   go to github.com/PCANALS  ", size = 30, color = "olivedrab1", boxcolor = "pink",
+git<-image_annotate(image_read("https://pcanals.github.io/pics/GIT.png" )%>%image_scale("x400"), 
+                    "   go to github.com/PCANALS  ", size = 30, color = "white", boxcolor = "green2",
                     degrees = 10, location = "+50+280")
 
 ##Decisions
@@ -41,17 +42,14 @@ a<-menu(c("Yes", "No", "Maybe"), title="Do u wanna know my story?", graphics = T
 
 if (a == 1){
   b<-menu(c("Life", "Work", "Projects"), title="What do u want know?", graphics = TRUE)
-      if (b==1){ print(life);print("Hi, I'm Pilar and I live in Barcelona, 
-                                   I love travelling, the snow and Lea, my puppy")}
+  if (b==1){ print(life);print("Hi, I'm Pilar and I live in Barcelona, I love travelling, the snow and Lea, my puppy")}
       else if (b==2) {print(cv2); "Check my cv on  www.linkedin.com/in/pilarcanals"}
       else if (b==3) {print(git); "See my projects on Github https://github.com/PCANALS"}
 } else {
-  print (really);
+  print (what);
    c<-menu(c("no", "yes"), title="Are u sure?", graphics = TRUE )
       if (c==1) {print("Yeii!, then let's back to the beginning")}
   }
-
-
 
 
 #Projects
@@ -59,7 +57,7 @@ if (a == 1){
 
 
 # print(really)
-# image_browse(really)
+image_browse(what)
 # 
 # 
 # 
